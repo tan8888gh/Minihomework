@@ -40,8 +40,6 @@ public class fileWriter {
             BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\tanve\\Desktop\\homework\\trades.csv"));
                 bw.write(currency1);
                 bw.write(",");
-                bw.write(currency2);
-                bw.write(",");
                 bw.write(tradeprice);
                 bw.write(",");
                 bw.write(tradeAmount);
