@@ -1,2 +1,63 @@
 
-System.out.println("Hello, World");
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javaapplication55;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/**
+ *
+ * @author tanve
+ */
+public class fileWriter {
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException {
+     String inputFile = "trades.txt";
+         String outputFile = "trades.csv"; 
+     //  Read in from a file called “trades.txt” 
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\tanve\\Desktop\\homework\\trades.txt"));
+            System.out.println(br.readLine());
+         
+         //Five strings created that will be written to csv file if the data read from text file is valid     
+         String currency1 = "EUR";
+         String currency2 = "USD";
+         String tradeprice = "123";
+         String tradeAmount="5";
+         String tradetype = "R";
+        
+        // The CSV file where you want to write the data
+            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\tanve\\Desktop\\homework\\trades.csv"));
+                bw.write(currency1);
+                bw.write(",");
+                bw.write(currency2);
+                bw.write(",");
+                bw.write(tradeprice);
+                bw.write(",");
+                bw.write(tradeAmount);
+                bw.write(",");
+                bw.write(tradetype);
+                bw.write(",");
+                bw.close();
+                System.out.println("String written to the file successfully.");
+         
+         
+       // Confirm user trade is valid
+        System.out.println("Trade accepted, details written to file (trades.csv).");
+} catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+
